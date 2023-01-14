@@ -1,0 +1,509 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    height: 100%;
+    overflow-y: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.img_bg {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(70deg, #5a6c85, #2c3c51);
+    position: fixed;
+    z-index: -10;
+    margin: 0;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.top-container {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 110px;
+}
+
+nav {
+    position: fixed;
+    width: 60px;
+    height: 100%;
+    background: linear-gradient(40deg, #162226, #344459);
+    transition: 0.4s;
+    overflow: hidden;
+}
+
+nav:hover {
+    width: 300px;
+}
+
+nav header {
+    display: flex;
+    flex-direction: row;
+    background: #344459;
+    width: 100%;
+    align-items: center;
+}
+
+nav header .mylogo {
+    position: relative;
+    display: block;
+    min-width: 60px;
+    text-align: center;
+}
+
+.mylogo i {
+    font-size: 24px;
+    color: rgb(215, 215, 215);
+}
+
+nav header .mylogoname {
+    font-family: sans-serif;
+    color: rgb(215, 215, 215);
+    transition: visibility 0.4s;
+    width: 100%;
+    white-space: nowrap;
+    margin: 0;
+}
+
+nav header .mylogoname .toph1 {
+    margin-bottom: -20px;
+}
+
+nav ul {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-left: 0 !important;
+}
+
+nav ul li {
+    position: relative;
+    width: 100%;
+    list-style: none;
+    transition: 0.3s;
+}
+
+nav ul li:hover {
+    background: rgba(114, 137, 166, 0.7) !important;
+    cursor: pointer;
+}
+
+nav ul li .container-spn {
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: rgb(215, 215, 215);
+}
+
+nav ul li .container-spn:hover {
+    color: rgb(215, 215, 215);
+}
+
+nav ul li .container-spn .icon {
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+}
+
+nav ul li .container-spn .icon .fa-solid {
+    font-size: 24px
+}
+
+nav ul li .container-spn .title {
+    font-family: sans-serif;
+    font-size: large;
+    font-weight: bold;
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: start;
+    white-space: nowrap;
+}
+
+.bottom-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: fixed;
+    height: 110px;
+    width: 100%;
+    bottom: 0;
+    background: linear-gradient(-70deg, #162226, #35474e);
+}
+
+.play-x-song {
+    /* background-color: #005C53; */
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.album {
+    display: flex;
+    height: 100%;
+    /* background-color: aqua; */
+    justify-content: flex-start;
+    align-items: center;
+    width: 27%;
+}
+
+.album img {
+    width: 95%;
+    max-height: 100%;
+}
+
+.song-now {
+    width: 73%;
+    /* background-color: blueviolet; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+.song-now h2 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 23px;
+    padding-left: 3%;
+}
+
+.snt {
+    color: rgb(215, 215, 215);
+}
+
+.sna {
+    color: rgb(129, 157, 192);
+}
+
+.controller-player {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background-color: #DBF227; */
+    width: 50%;
+    height: 100%;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.vo-controll {
+    width: 30%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    display: flex;
+    height: 100%;
+    /* background-color: red; */
+}
+
+.vo-controll i {
+    color: rgb(215, 215, 215);
+    font-size: 20px;
+}
+
+.container-parent {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-left: 3.5%;
+    transition: 0.4s;
+}
+
+.music-list {
+    display: block;
+    padding-left: 2%;
+    padding-right: 2%;
+    /* width: 100%;
+    height: 100%; */
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.music-list h1 {
+    color: rgb(215, 215, 215);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.underline {
+    padding-top: 2em;
+    border-bottom: solid 3px rgb(215, 215, 215);
+    ;
+}
+
+.list-of-song {
+    overflow-y: auto;
+    width: 100%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+}
+
+th {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+
+th,
+td {
+    padding: 12px 15px;
+}
+
+.td-3 {
+    color: rgb(215, 215, 215);
+    max-width:300px;
+}
+
+tr {
+    background-color: rgba(114, 137, 166, 0.7);
+    border-bottom: 1px solid rgba(114, 137, 166, 0.7);
+}
+
+tr:hover {
+    background-color: rgb(131, 139, 146);
+}
+
+tr:nth-of-type(even) {
+    background-color: rgba(117, 124, 134, 0.7);
+}
+
+tr:nth-of-type(even):hover {
+    background-color: rgb(131, 139, 146);
+}
+
+tr:last-of-type {
+    border-bottom: 2px solid rgb(215, 215, 215);
+}
+
+.player-bar {
+    width: 100%;
+}
+
+.the-progress-class {
+    width: 100%;
+    height: 10px;
+    background: rgb(231, 231, 231);
+    outline: none;
+    opacity: 0.8;
+    transition: opacity .2s;
+    -webkit-appearance: none;
+    border-radius: 5px;
+}
+
+.the-progress-class:hover {
+    opacity: 1;
+}
+
+.the-progress-class::-ms-fill-lower {
+    background-color: #5186cb;
+    color: #5186cb;
+}
+
+.the-progress-class::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #5186cb;
+    width: 15px;
+    height: 25px;
+    border-radius: 20%;
+    cursor: pointer;
+}
+
+.the-progress-class::-moz-range-track {
+    background-color: #5186cb;
+    height: 10px;
+}
+
+.the-progress-class::-ms-track {
+    background: #5186cb;
+    color: transparent;
+    border: none;
+}
+
+.the-progress-class::-ms-tooltip {
+    display: none;
+}
+
+.progress-container {
+    background: dodgerblue;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 10px;
+    width: 100%;
+}
+
+.progress {
+    background-color: rgb(0, 68, 255);
+    border-radius: 5px;
+    height: 100%;
+    width: 0%;
+    transition: width 0.1s linear;
+}
+
+.button-ctrl button i {
+    font-size: 30px;
+    color: rgb(215, 215, 215);
+}
+
+.button-ctrl button {
+    border-radius: 50%;
+    border-style: solid;
+    border-color: rgb(215, 215, 215);
+    width: 50px;
+    height: 50px;
+    outline: none;
+    margin: auto;
+    display: inline;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: transparent;
+    transition: 0.5s;
+}
+
+.button-ctrl button:hover {
+    background-color: #636569;
+}
+
+.button-ctrl button:disabled {
+    border-color: #5d5d5d;
+}
+
+.vo-controll i {
+    padding-right: 1em;
+}
+
+.volume-container {
+    width: 40% !important;
+}
+
+.grid-container {
+    justify-content: center;
+    display: grid;
+    grid-template-columns: 18% 18% 18% 18% 18%;
+    padding: 10px;
+    padding-bottom: 15.5%;
+    gap: 2%;
+    width: 100%;
+}
+
+.grid-artist img {
+    border-radius: 50%;
+}
+
+.grid-albs img {
+    border-radius: 10%;
+}
+
+.list_of_div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    height: fit-content;
+    width: 100%;
+}
+
+.list_of_div:hover {
+    border-radius: 5%;
+    transition: 0.5s;
+    cursor: pointer;
+    background-color: #dddddd;
+}
+
+.list_of_div h3 {
+    width: 250px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    color: rgb(215, 215, 215);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.list_of_div img {
+    width: 100%;
+}
+
+.parent-grid {
+    padding-bottom: 1em;
+}
+
+.times {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.times h6 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgb(215, 215, 215);
+}
+label {
+	display: block;
+	width: 60vw;
+	max-width: 300px;
+	margin: 0 auto;
+	background-color: #344459;
+	border-radius: 2px;
+	font-size: 1em;
+	line-height: 2.5em;
+	text-align: center;
+    color: rgb(215, 215, 215);
+}
+
+label:hover {
+	background-color: #53657c;
+}
+
+label:active {
+	background-color: #303b48;
+}
+
+.inputff {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+
+
+
+@media screen and (max-width:1308px) {
+  .td-3 {
+    max-width: 250px;
+  }
+}
