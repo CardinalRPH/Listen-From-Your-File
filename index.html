@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="shortcut icon" href="source\Favicon.png" type="image/x-icon">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="source/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <title id="webtit">The Player CRPH</title>
+    </head>
+
+    <body>
+        <div class="img_bg" id="img_bg_id"></div>
+        <div class="top-container">
+            <nav>
+                <header>
+                    <div class="mylogo">
+                        <i class="fa-solid fa-headphones"></i>
+                        <!-- <img src="Asset\logo.png" alt="this is logo" width="50px" height="50px"> -->
+                    </div>
+                    <div class="mylogoname" id="mylogoname">
+                        <h1 class="toph1">Listen From</h1>
+                        <br>
+                        <h1>Your File</h1>
+                    </div>
+
+                </header>
+                <ul>
+                    <li id="allid">
+                        <div class="container-spn">
+                            <span class="icon">
+                                <i class="fa-solid fa-music"></i>
+                            </span>
+                            <span class="title">All Song</span>
+                        </div>
+
+                    </li>
+                    <li id="albid">
+                        <div class="container-spn">
+                            <span class="icon">
+                                <i class="fa-solid fa-compact-disc"></i>
+                            </span>
+                            <span class="title">Album</span>
+                        </div>
+
+                    </li>
+                    <li id="artid">
+                        <div class="container-spn">
+                            <span class="icon">
+                                <i class="fa-solid fa-user"></i>
+                            </span>
+                            <span class="title">Artist</span>
+                        </div>
+
+                    </li>
+                    <li id="settid" data-bs-toggle="modal" data-bs-target="#modalId">
+                        <div class="container-spn">
+                            <span class="icon">
+                                <i class="fa-solid fa-gear"></i>
+                            </span>
+                            <span class="title">Setting</span>
+                        </div>
+
+                    </li>
+                </ul>
+            </nav>
+            <div class="container-parent" id="container-parent">
+                <div class="music-list" id="allist">
+                    <br>
+                    <br>
+                    <h1>My Music</h1>
+                    <div class="underline"></div>
+                    <br>
+                    <div class="list-of-song" id="listid-of-song">
+                        <table id="table" class="w-100">
+                            <tbody id="table-song" class="w-100"></tbody>
+                        </table>
+                    </div>
+
+                </div>
+                <div class="music-list" id="albmlst">
+                    <br>
+                    <br>
+                    <div class="upcontainer">
+                        <h1>My album</h1>
+                        <div class="underline"></div>
+                    </div>
+                    <br>
+                    <div class="parent-grid">
+                        <div class="grid-container grid-albs" id="grid-container-id-alb"></div>
+                    </div>
+                </div>
+                <div class="music-list" id="artlst">
+                    <br>
+                    <br>
+                    <div class="upcontainer">
+                        <h1>My artist</h1>
+                        <div class="underline"></div>
+                    </div>
+                    <br>
+                    <div class="parent-grid">
+                        <div class="grid-container grid-artist" id="grid-container-id-art"></div>
+                    </div>
+
+                </div>
+                <div class="music-list" id="artist-select">
+                    <br>
+                    <br>
+                    <h1 id="art_selected">aaaa</h1>
+                    <div class="underline"></div>
+                    <br>
+                    <div class="list-of-song" id="listid-of-song">
+                        <table id="table">
+                            <tbody id="table-song-art"></tbody>
+                        </table>
+                    </div>
+
+                </div>
+                <div class="music-list" id="album-select">
+                    <br>
+                    <br>
+                    <h1 id="alb_selected">aaaa</h1>
+                    <div class="underline"></div>
+                    <br>
+                    <div class="list-of-song" id="listid-of-song">
+                        <table id="table">
+                            <tbody id="table-song-alb"></tbody>
+                        </table>
+                    </div>
+
+                </div>
+                <div class="music-list" id="fldsel">
+                    <!-- Modal trigger button -->
+                    <!-- <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#modalId">
+                                      Launch
+                                    </button> -->
+
+                    <!-- Modal Body -->
+                    <!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
+                        <div class="modal fade" id="modalId" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true"> <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" role="document">
+                            <div class="modal-content bg-secondary">
+                                <div class="modal-header border-secondary">
+                                    <h5 class="modal-title text-light" id="modalTitleId">Uploader</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body d-flex flex-column justify-content-center text-center">
+                                    <label for="folder" class="">Up Your Music</label>
+                                    <input type='file' name="file[]" id="folder" class="inputff" multiplewebkitdirectory directory multiple accept=".flac, .mp3, .m4a">
+
+                                    <h4 id="music-sel">Music Selected 0</h4>
+
+                                </div>
+                                <div
+                                    class="modal-footer d-flex justify-content-center border-secondary">
+                                    <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
+                                    <button type="button" id="thedone" class="btn btn-primary" data-bs-dismiss="modal">Done</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Optional: Place to the bottom of scripts -->
+                    <script>
+                        const myModal = new bootstrap.Modal(document.getElementById('modalId'), options)
+                    </script>
+                </div>
+            </div>
+        </div>
+        <div class="bottom-container" onmouseover="overdis()" onmouseout="overen()">
+            <div class="play-x-song">
+                <div class="album">
+                    <img src="source/unknown.jpg" alt="image cover" id="cover">
+                </div>
+                <div class="song-now">
+                    <h2 class="snt text-truncate text-nowrap" id="title_info" style="max-width: 210px;">Title</h2>
+                    <h2 class="sna text-truncate text-nowrap" id="artist_info" style="max-width: 210px;">Artist</h2>
+                </div>
+            </div>
+            <div class="controller-player">
+                <div class="button-player">
+                    <span class="button-ctrl">
+                        <button id="back">
+                            <i id="iback" class="fa-solid fa-backward-step"></i>
+                        </button>
+                        <button id="play">
+                            <i class="fa-solid fa-play"></i>
+                        </button>
+                        <button id="forward">
+                            <i id="inext" class="fa-solid fa-forward-step"></i>
+                        </button>
+                    </span>
+                </div>
+                <div class="times" id="times">
+                    <h6 id="sta">S</h6>
+                    <h6 id="est">F</h6>
+                </div>
+                <div class="player-bar">
+                    <input type="range" id="the-progress" class="the-progress-class" min="0" step="0.15" value="500">
+                    <audio src="" id="audio"></audio>
+                </div>
+            </div>
+            <div class="vo-controll">
+                <i class="fa-solid fa-volume-high"></i>
+                <input type="range" id="volume" class="the-progress-class volume-container" min="0" max="1" value="0.70" step="0.1">
+
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jsmediatags/3.9.5/jsmediatags.min.js"></script>
+        <script src="source/script.js"></script>
+    </body>
+
+</html>
