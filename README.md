@@ -11,3 +11,8 @@ Run the index.php or index.html file -> and the player will be open in your brow
 To add an audio file : click the "Up Your Music" button -> choose your music -> and finally click "Done"
 <br>
 The music will appear in the player.
+<br>
+<br>
+ps..
+<br>
+The layout in this project is not fixed for devices that have small screen sizes.
